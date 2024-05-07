@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { UserButton, useUser } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";

@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { sidebarLinks } from "@constants";
 import Link from "next/link";

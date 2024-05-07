@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { useEffect, useState } from "react";
 import { Add, Logout, Person, Search } from "@mui/icons-material";
