@@ -17,10 +17,7 @@ export const connectToDB = async (): Promise<void> => {
 
   try {
     await mongoose.connect(process.env.MONGODB_URL, {
-      dbName: "Zone",
-      // ใช้เวอร์ชัน mongoose 6.x ไม่ต้องระบุ useNewUrlParser และ useUnifiedTopology
-      // useNewUrlParser: true,
-      // useUnifiedTopology: true,
+      dbName: "Zone"
     });
 
     isConnected = true;
