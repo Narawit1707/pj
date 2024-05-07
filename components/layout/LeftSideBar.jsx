@@ -10,22 +10,30 @@ import Loader from "@components/Loader";
 
 const LeftSideBar = () => {
   const { user, isLoaded } = useUser();
-
   const [loading, setLoading] = useState(true);
-
   const [userData, setUserData] = useState({});
 
-  const getUser = async () => {
-    const response = await fetch(`/api/user/${user!.id}`);
-    const data = await response.json();
-    setUserData(data);
-    setLoading(false);
-  };
-
   useEffect(() => {
-    if (user) {
-      getUser();
-    }
+    const fetchData = async () => {
+      try {
+        if (user) {
+          const response = await fetch(`/api/user/${user.id}`);
+          if (!response.ok) {
+            throw new Error("Failed to fetch user data");
+          }
+          const data = await response.json();
+          setUserData(data);
+          setLoading(false);
+        } else {
+          console.log("User is null or undefined");
+        }
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+        // Handle error
+      }
+    };
+
+    fetchData();
   }, [user]);
 
   return loading || !isLoaded ? (
@@ -82,3 +90,5 @@ const LeftSideBar = () => {
 };
 
 export default LeftSideBar;
+
+ 

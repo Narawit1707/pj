@@ -21,6 +21,6 @@
       "@*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "constants/index.js", "app/api/webhook/route.js", "components/layout/LeftSideBar.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "constants/index.js", "app/api/webhook/route.js", "components/layout/LeftSideBar.jsx"],
   "exclude": ["node_modules"]
 }
