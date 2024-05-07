@@ -21,6 +21,6 @@
       "@*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "constants/index.js", "app/api/webhook/route.js", "components/layout/LeftSideBar.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "constants/index.js", "app/api/webhook/route.js", "components/layout/LeftSideBar.jsx", "components/layout/BottomBar.jsx", "components/layout/MainContainer.jsx", "components/layout/Menu.jsx", "components/layout/RightSideBar.jsx", "components/layout/TopBar.jsx"],
   "exclude": ["node_modules"]
 }
