@@ -1,24 +1,20 @@
-'use client'
+"use client"
+
 import TopBar from "./TopBar";
 import { pageTitles } from "@constants";
 import { usePathname } from "next/navigation";
 
-interface PageTitle {
-  url: string;
-  title: string;
-}
-
-const MainContainer: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const MainContainer = ({ children }) => {
   // Get the current url path
   const currentPath = usePathname();
 
   const regex = /^\/([^\/]+)/;
   const firstPath = currentPath.match(regex)
-    ? currentPath.match(regex)![0]
+    ? currentPath.match(regex)[0]
     : currentPath;
 
   // Get title of current path
-  const title = (pageTitles.find((page: PageTitle) => page.url === firstPath) || {}).title || "";
+  const title = pageTitles.find((page) => page.url === firstPath)?.title || "";
 
   return (
     <section className="flex flex-col flex-1 max-w-3xl 2xl:max-w-5xl px-4 md:px-10 lg:px-4 xl:px-20">
