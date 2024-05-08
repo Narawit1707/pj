@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { UserButton, useUser } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
@@ -10,30 +10,22 @@ import Loader from "@components/Loader";
 
 const LeftSideBar = () => {
   const { user, isLoaded } = useUser();
+
   const [loading, setLoading] = useState(true);
+
   const [userData, setUserData] = useState({});
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        if (user) {
-          const response = await fetch(`/api/user/${user.id}`);
-          if (!response.ok) {
-            throw new Error("Failed to fetch user data");
-          }
-          const data = await response.json();
-          setUserData(data);
-          setLoading(false);
-        } else {
-          console.log("User is null or undefined");
-        }
-      } catch (error) {
-        console.error("Error fetching user data:", error);
-        // Handle error
-      }
-    };
+  const getUser = async () => {
+    const response = await fetch(`/api/user/${user.id}`);
+    const data = await response.json();
+    setUserData(data);
+    setLoading(false);
+  };
 
-    fetchData();
+  useEffect(() => {
+    if (user) {
+      getUser();
+    }
   }, [user]);
 
   return loading || !isLoaded ? (
@@ -90,5 +82,3 @@ const LeftSideBar = () => {
 };
 
 export default LeftSideBar;
-
- 
