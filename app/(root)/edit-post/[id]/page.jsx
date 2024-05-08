@@ -8,8 +8,6 @@ import { useEffect, useState } from "react";
 const EditPost = () => {
   const { id } = useParams();
 
-  const [loading, setLoading] = useState(true);
-
   const [postData, setPostData] = useState({});
 
   const getPost = async () => {
@@ -21,7 +19,6 @@ const EditPost = () => {
     });
     const data = await response.json();
     setPostData(data);
-    setLoading(false);
   };
 
   useEffect(() => {

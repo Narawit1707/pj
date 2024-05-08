@@ -5,7 +5,6 @@ import UserCard from '@components/cards/UserCard'
 import React, { useEffect, useState } from 'react'
 
 const People = () => {
-  const [loading, setLoading] = useState(true)
 
   const [allUsers, setAllUsers] = useState([])
 
@@ -13,7 +12,6 @@ const People = () => {
     const response = await fetch(`/api/user`)
     const data = await response.json()
     setAllUsers(data)
-    setLoading(false)
   }
 
   useEffect(() => {

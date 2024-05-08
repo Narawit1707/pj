@@ -10,8 +10,6 @@ import { useEffect, useState } from "react";
 const SearchPeople = () => {
   const { query } = useParams();
 
-  
-
   const [searchedPeople, setSearchedPeople] = useState([]);
 
   const getSearchedPeople = async () => {

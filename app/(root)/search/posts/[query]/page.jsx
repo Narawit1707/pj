@@ -9,8 +9,6 @@ import { useEffect, useState } from "react";
 const SearchPost = () => {
   const { query } = useParams();
 
-  
-
   const [searchedPosts, setSearchedPosts] = useState([]);
 
   const getSearchedPosts = async () => {

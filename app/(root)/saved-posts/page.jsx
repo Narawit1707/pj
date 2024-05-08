@@ -6,9 +6,7 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 
 const SavedPosts = () => {
-  const { user, isLoaded } = useUser()
-
-  const [loading, setLoading] = useState(true)
+  const { user } = useUser()
 
   const [userData, setUserData] = useState({})
 
@@ -16,7 +14,6 @@ const SavedPosts = () => {
     const response = await fetch(`/api/user/${user.id}`)
     const data = await response.json()
     setUserData(data)
-    setLoading(false)
   }
 
   useEffect(() => {

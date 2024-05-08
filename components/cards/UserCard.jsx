@@ -7,9 +7,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const UserCard = ({ userData, update }) => {
-  const { user, isLoaded } = useUser();
-
-  const [loading, setLoading] = useState(true);
+  const { user} = useUser();
 
   const [userInfo, setUserInfo] = useState({});
 
@@ -22,7 +20,6 @@ const UserCard = ({ userData, update }) => {
     });
     const data = await response.json();
     setUserInfo(data);
-    setLoading(false);
   };
 
   useEffect(() => {

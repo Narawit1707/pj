@@ -5,17 +5,14 @@ import Posting from "@components/form/Posting";
 import { useEffect, useState } from "react";
 
 const CreatePost = () => {
-  const { user, isLoaded } = useUser();
-
-  const [loading, setLoading] = useState(true);
-
+  const { user} = useUser();
+  
   const [userData, setUserData] = useState({});
 
   const getUser = async () => {
     const response = await fetch(`/api/user/${user.id}`);
     const data = await response.json();
     setUserData(data);
-    setLoading(false);
   };
 
   useEffect(() => {

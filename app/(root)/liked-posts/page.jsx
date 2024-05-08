@@ -8,15 +8,12 @@ import { useState } from 'react'
 const LikedPosts = () => {
   const { user, isLoaded } = useUser()
 
-  const [loading, setLoading] = useState(true)
-
   const [userData, setUserData] = useState({})
 
   const getUser = async () => {
     const response = await fetch(`/api/user/${user.id}`)
     const data = await response.json()
     setUserData(data)
-    setLoading(false)
   }
 
   useEffect(() => {

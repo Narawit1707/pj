@@ -9,8 +9,6 @@ import { useEffect, useState } from "react";
 const Following = () => {
   const { id } = useParams();
 
-  const [loading, setLoading] = useState(true);
-
   const [userData, setUserData] = useState({});
 
   const getUser = async () => {
@@ -22,7 +20,6 @@ const Following = () => {
     });
     const data = await response.json();
     setUserData(data);
-    setLoading(false);
   };
 
   useEffect(() => {

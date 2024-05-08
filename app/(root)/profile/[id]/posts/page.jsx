@@ -9,8 +9,6 @@ import React, { useEffect, useState } from "react";
 const ProfilePosts = () => {
   const { id } = useParams();
 
-  const [loading, setLoading] = useState(true);
-
   const [userData, setUserData] = useState({});
 
   const getUser = async () => {
@@ -22,14 +20,13 @@ const ProfilePosts = () => {
     });
     const data = await response.json();
     setUserData(data);
-    setLoading(false);
   };
 
   useEffect(() => {
     getUser();
   }, [id]);
 
-  const { user, isLoaded } = useUser();
+  const { user} = useUser();
 
   console.log(userData)
 
