@@ -1,7 +1,6 @@
 "use client";
 
 import { useUser } from "@clerk/nextjs";
-import Loader from "@components/Loader";
 import Posting from "@components/form/Posting";
 import { useEffect, useState } from "react";
 
@@ -32,9 +31,7 @@ const CreatePost = () => {
     postPhoto: null,
   };
 
-  return loading || !isLoaded ? (
-    <Loader />
-  ) : (
+  return(
     <div className="pt-6">
       <Posting post={postData} apiEndpoint={"/api/post/new"} />
     </div>

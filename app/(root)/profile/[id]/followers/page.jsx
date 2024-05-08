@@ -1,6 +1,5 @@
 "use client"
 
-import Loader from "@components/Loader";
 import ProfileCard from "@components/cards/ProfileCard";
 import UserCard from "@components/cards/UserCard";
 import { useParams } from "next/navigation";
@@ -29,9 +28,7 @@ const Followers = () => {
     getUser();
   }, [id]);
 
-  return loading ? (
-    <Loader />
-  ) : (
+  return(
     <div className="flex flex-col gap-9">
       <ProfileCard userData={userData} activeTab="Followers" />
 

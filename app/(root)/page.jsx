@@ -1,7 +1,7 @@
 "use client";
 
 import { useUser } from "@clerk/nextjs";
-import Loader from "@components/Loader";
+
 import PostCard from "@components/cards/PostCard";
 import { useEffect, useState } from "react";
 
@@ -23,9 +23,7 @@ const Home = () => {
     getFeedPost()
   }, []);
 
-  return loading || !isLoaded ? (
-    <Loader />
-  ) : (
+  return(
     <div className="flex flex-col gap-10">
       {feedPost.map((post) => (
         <PostCard

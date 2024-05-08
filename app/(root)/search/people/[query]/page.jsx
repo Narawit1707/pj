@@ -1,7 +1,6 @@
 "use client"
 
 import { useUser } from "@clerk/nextjs";
-import Loader from "@components/Loader";
 import UserCard from "@components/cards/UserCard";
 import Link from "next/link";
 import { useParams } from "next/navigation";
@@ -25,9 +24,7 @@ const SearchPeople = () => {
     getSearchedPeople();
   }, [query]);
 
-  return loading ? (
-    <Loader />
-  ) : (
+  return(
     <div className="flex flex-col gap-10">
       <div className="flex gap-6">
         <Link className="tab bg-dark-2" href={`/search/posts/${query}`}>

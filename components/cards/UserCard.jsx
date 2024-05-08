@@ -1,7 +1,6 @@
 "use client";
 
 import { useUser } from "@clerk/nextjs";
-import Loader from "@components/Loader";
 import { PersonAddAlt, PersonRemove } from "@mui/icons-material";
 import Image from "next/image";
 import Link from "next/link";
@@ -51,9 +50,7 @@ const UserCard = ({ userData, update }) => {
     update();
   };
 
-  return loading || !isLoaded ? (
-    <Loader />
-  ) : (
+  return(
     <div className="flex justify-between items-center">
       <Link className="flex gap-4 items-center" href={`/profile/${userData._id}/posts`}>
         <Image

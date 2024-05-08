@@ -1,6 +1,6 @@
 "use client"
 
-import Loader from "@components/Loader";
+
 import Posting from "@components/form/Posting";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -36,9 +36,7 @@ const EditPost = () => {
   }
 
   console.log(postInfo)
-  return loading ? (
-    <Loader />
-  ) : (
+  return(
     <div className="pt-6">
       <Posting post={postInfo} apiEndpoint={`/api/post/${id}`}/>
     </div>
