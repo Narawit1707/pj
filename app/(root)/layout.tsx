@@ -7,6 +7,7 @@ import MainContainer from "@components/layout/MainContainer";
 import RightSideBar from "@components/layout/RightSideBar";
 import BottomBar from "@components/layout/BottomBar";
 
+
 export const metadata = {
   title: "Zone",
   description: "Next 14 Social Media App",
@@ -22,6 +23,7 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <main className="flex flex-row">
             <LeftSideBar />
             <MainContainer>
+              
               {children}
             </MainContainer>
             <RightSideBar />

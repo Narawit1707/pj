@@ -1,3 +1,5 @@
+'use client'
+
 import { useUser } from "@clerk/nextjs";
 import { PersonAddAlt, PersonRemove } from "@mui/icons-material";
 import Image from "next/image";
@@ -6,9 +8,7 @@ import { tabs } from "@constants";
 import Link from "next/link";
 
 const ProfileCard = ({ userData, activeTab }) => {
-  const { user, isLoaded } = useUser();
-
-  const [loading, setLoading] = useState(true);
+  const { user} = useUser();
 
   const [userInfo, setUserInfo] = useState({});
 
@@ -21,7 +21,6 @@ const ProfileCard = ({ userData, activeTab }) => {
     });
     const data = await response.json();
     setUserInfo(data);
-    setLoading(false);
   };
 
   useEffect(() => {

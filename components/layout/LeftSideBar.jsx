@@ -9,9 +9,8 @@ import { useEffect, useState } from "react";
 
 
 const LeftSideBar = () => {
-  const { user, isLoaded } = useUser();
+  const { user} = useUser();
 
-  const [loading, setLoading] = useState(true);
 
   const [userData, setUserData] = useState({});
 
@@ -19,7 +18,7 @@ const LeftSideBar = () => {
     const response = await fetch(`/api/user/${user.id}`);
     const data = await response.json();
     setUserData(data);
-    setLoading(false);
+    
   };
 
   useEffect(() => {

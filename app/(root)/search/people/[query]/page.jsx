@@ -1,6 +1,7 @@
 "use client"
 
 import { useUser } from "@clerk/nextjs";
+
 import UserCard from "@components/cards/UserCard";
 import Link from "next/link";
 import { useParams } from "next/navigation";
@@ -9,7 +10,7 @@ import { useEffect, useState } from "react";
 const SearchPeople = () => {
   const { query } = useParams();
 
-  const [loading, setLoading] = useState(true);
+  
 
   const [searchedPeople, setSearchedPeople] = useState([]);
 
@@ -17,7 +18,7 @@ const SearchPeople = () => {
     const response = await fetch(`/api/user/search/${query}`);
     const data = await response.json();
     setSearchedPeople(data);
-    setLoading(false);
+    
   };
 
   useEffect(() => {

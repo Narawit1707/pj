@@ -10,9 +10,9 @@ import { dark } from "@clerk/themes";
 
 
 const TopBar = () => {
-  const { user, isLoaded } = useUser();
+  const { user} = useUser();
 
-  const [loading, setLoading] = useState(true);
+  const [setLoading] = useState(true);
 
   const [userData, setUserData] = useState({});
 
@@ -20,7 +20,7 @@ const TopBar = () => {
     const response = await fetch(`/api/user/${user.id}`);
     const data = await response.json();
     setUserData(data);
-    setLoading(false);
+    
   };
 
   useEffect(() => {
